@@ -1,0 +1,105 @@
+1. What data types do each of these values represent?
+
+SQL data types:
+
+"A Clockwork Orange"
+-Char or Varchar
+
+42
+-Int
+
+09/02/1945
+-Date
+
+98.7
+-Decimal
+
+$15.99
+-Char or Varchar. Decimal if $ symbol is not needed.
+
+2. Explain when a database would be used. Explain when a text file would be used.
+
+  A database would be used when dealing with large pieces of information on a computer that needs to be accessed by multiple applications and for the data to be constantly available. A text file would be used when you don't need to have data persist after the program ends and when multiple applications don't need to access the data.
+
+3. Describe one difference between SQL and other programming languages.
+
+  One difference between SQL and other programming languages is that SQL is declarative. Instead of defining an algorithm for how the database should search, we tell the database what we are looking for and the database finds the most efficient way to return the data.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+  Database Management System- A program used to create, read, retrieve, update, and delete information from the database. Examples include MySQL and Oracle.
+
+  Database Server - Directly manages the database by processing commands in a secure and efficient way. Database Management System talks to the database server which then talks to the database.
+
+  Database - a collection of tables that hold information. The tables are related by primary and foreign keys.
+
+5. Explain the meaning of table, row, column, and value.
+
+  Table - A collection of related data. For example, a table named 'customers'. It will store a customers name, address, phone number, and email.
+
+  Row - A complete conceptual unit. For example, A student's name, major, and gpa would describe the student as a whole.
+
+  Column - Defines what the data below it represents. For example, a column named 'major', in a student table.
+
+  Value - A piece of information that the column name describes. For example, 'Computer Science', found in a cell below the column named, 'major'.
+
+6. List three data types that can be used in a table.
+
+ 1. Int
+ 2. VARCHAR
+ 3. DECIMAL
+
+7. Given this payments table, provide an English description of the following queries and include their results:
+
+  SELECT date, amount
+  FROM payments;
+
+  -Description: Retrieve all of the information in the date and amount columns from the table named, 'payments'.
+  -Results: 'payments' table only showing two columns, 'date' and 'amount' with all of the values from those columns.
+
+  SELECT amount
+  FROM payments
+  WHERE amount > 500;
+
+  -Description: From the 'payments' table, only retrieve the values in the amount column that have an amount more than 500.
+  -Results: 'payments' table only showing the 'amount' column with the values that are over 500 in that column.
+
+  SELECT *
+  FROM payments
+  WHERE payee = 'Mega Foods';
+
+  -Description: Select all columns from the 'payments' table where the payee is 'Mega Foods'.
+  -Results: Will return one row from the 'payments' table. That row will include all of the columns and values about 'Mega Foods'.
+
+8. Given this users table, write SQL queries using   the following criteria and include the output:
+
+The email and sign-up date for the user named DeAndre Data.
+
+  Query: SELECT email, date
+         FROM users
+         WHERE name = 'DeAndre Data';
+  Output:
+                  users
+         __________________________
+         email           date
+         blah@email.com  2007-02-23
+
+
+The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+  Query: SELECT user_ID
+         FROM users
+         WHERE email = 'aleesia.algorithm@uw.edu';
+  Output:
+         users
+        _________
+        user_ID
+           5
+
+
+All the columns for the user ID equal to 4.
+
+  Query: SELECT * FROM users
+         WHERE user_ID = 4;
+
+  Output: Will return one row with all column names and values for the user with the user_ID, 4.
